@@ -12,5 +12,3 @@ RUN rm /etc/nginx/sites-enabled/default
 # Nginx 포트 노출
 EXPOSE 80
 
-# Nginx를 슈퍼 유저 권한으로 실행
-CMD ["nginx", "-g", "daemon off;"]
