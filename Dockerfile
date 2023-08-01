@@ -6,7 +6,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Remove default Nginx configuration
-RUN rm /etc/nginx/sites-enabled/default
+
 
 # Expose Nginx ports
 EXPOSE 80
