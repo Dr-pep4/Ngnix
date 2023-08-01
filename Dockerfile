@@ -1,25 +1,16 @@
-# Use the official Ubuntu base image
+# 공식 Ubuntu 베이스 이미지 사용
 FROM ubuntu:22.04
 
-# Install Nginx
+# Nginx 설치
 RUN apt-get update && \
     apt-get install -y nginx && \
     rm -rf /var/lib/apt/lists/*
 
-# Create necessary directories and set permissions
-RUN mkdir -p /var/lib/nginx/body && \
-    chown -R www-data:www-data /var/lib/nginx && \
-    chown -R www-data:www-data /var/log/nginx
-
-# Remove the default Nginx configuration
+# 기본 Nginx 설정 제거
 RUN rm /etc/nginx/sites-enabled/default
 
-# Copy your custom Nginx configuration (if needed)
-# COPY nginx.conf /etc/nginx/nginx.conf
-
-# Expose the Nginx port
+# Nginx 포트 노출
 EXPOSE 80
 
-# Start Nginx with the necessary permissions
+# Nginx를 슈퍼 유저 권한으로 실행
 CMD ["nginx", "-g", "daemon off;"]
-
