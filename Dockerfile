@@ -2,7 +2,7 @@ FROM ubuntu:22.04
 
 # Install Nginx
 RUN apt-get update && \
-    apt-get install -y nginx && \
+    apt-get install -y nginx
 
 # Remove default Nginx configuration
 
